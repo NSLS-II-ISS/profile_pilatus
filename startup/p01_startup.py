@@ -120,7 +120,7 @@ RE.subscribe(bec)
 peaks = bec.peaks  # just as alias for less typing
 
 runengine_metadata_dir = Path(f'{ROOT_PATH_SHARED}/metadata/') / Path("runengine-metadata")
-RE.md = PersistentDict(runengine_metadata_dir) # PersistentDict will create the directory if it does not exist
+# RE.md = PersistentDict(runengine_metadata_dir) # PersistentDict will create the directory if it does not exist
 
 
 # Patch to fix Tom's terrible deeds
