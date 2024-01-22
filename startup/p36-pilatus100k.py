@@ -405,9 +405,11 @@ class PilatusStreamHDF5(PilatusHDF5):
     # def set_expected_number_of_points(self, acq_rate, traj_time):
 
 
+#pil100k = PilatusHDF5("XF:08IDB-ES{Det:PIL1}:", name="pil100k")  # , detector_id="SAXS")
+#pil100k_stream = PilatusStreamHDF5("XF:08IDB-ES{Det:PIL1}:", name="pil100k_stream", ext_trigger_device=apb_trigger_pil100k)
 
-pil100k = PilatusHDF5("XF:08IDB-ES{Det:PIL1}:", name="pil100k")  # , detector_id="SAXS")
-pil100k_stream = PilatusStreamHDF5("XF:08IDB-ES{Det:PIL1}:", name="pil100k_stream", ext_trigger_device=apb_trigger_pil100k)
+pil100k = PilatusHDF5("XF:08IDB-ES{Det:PIL2}", name="pil100k")  # , detector_id="SAXS")
+pil100k_stream = PilatusStreamHDF5("XF:08IDB-ES{Det:PIL2}", name="pil100k_stream", ext_trigger_device=apb_trigger_pil100k)
 
 pil100k.set_primary_roi(1)
 pil100k.stats1.kind = 'hinted'
