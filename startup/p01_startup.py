@@ -14,7 +14,7 @@ from bluesky.simulators import summarize_plan
 # Check version of bluesky and act accordingly
 from distutils.version import LooseVersion
 from datetime import datetime
-from xview.spectra_db.db_io import get_spectrum_catalog
+# from xview.spectra_db.db_io import get_spectrum_catalog
 import json
 import time as ttime
 import numpy as np
@@ -107,7 +107,7 @@ from databroker import Broker
 db_archive = Broker.named('iss')
 db = Broker.named('iss-local')
 
-db_proc = get_spectrum_catalog()
+# db_proc = get_spectrum_catalog()
 nslsii.configure_base(get_ipython().user_ns, db, pbar=False)
 nslsii.configure_kafka_publisher(RE, "iss")
 
