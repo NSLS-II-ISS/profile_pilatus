@@ -90,7 +90,7 @@ def wait_for_connection(self, timeout=DEFAULT_CONNECTION_TIMEOUT):
     if timeout is DEFAULT_CONNECTION_TIMEOUT:
         timeout = self.connection_timeout
     # print(f'{print_now()}: waiting for {self.name} to connect within {timeout:.4f} s...')
-    start = time.time()
+    start = ttime.time()
     self._ensure_connected(self._read_pv, self._write_pv, timeout=timeout)
     # print(f'{print_now()}: waited for {self.name} to connect for {time.time() - start:.4f} s.')
 
@@ -120,8 +120,8 @@ RE.subscribe(bec)
 peaks = bec.peaks  # just as alias for less typing
 
 runengine_metadata_dir = Path(f'{ROOT_PATH_SHARED}/metadata/') / Path("runengine-metadata")
-# RE.md = PersistentDict(runengine_metadata_dir) # PersistentDict will create the directory if it does not exist
-
+RE.md = PersistentDict(runengine_metadata_dir) # PersistentDict will create the directory if it does not exist
+RE.md._finalizer.atexit = False
 
 # Patch to fix Tom's terrible deeds
 # import matplotlib.backends.backend_qt
